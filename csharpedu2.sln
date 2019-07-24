@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.757
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodohukenShiritori", "TodohukenShiritori.csproj", "{F70ACCDF-E393-4F0C-A79A-3BBDEC239835}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShiritoriTest", "ShiritoriTest\ShiritoriTest.csproj", "{DE6165D7-504E-497B-A851-92C8EE649B8E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{F70ACCDF-E393-4F0C-A79A-3BBDEC239835}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F70ACCDF-E393-4F0C-A79A-3BBDEC239835}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F70ACCDF-E393-4F0C-A79A-3BBDEC239835}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE6165D7-504E-497B-A851-92C8EE649B8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE6165D7-504E-497B-A851-92C8EE649B8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE6165D7-504E-497B-A851-92C8EE649B8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE6165D7-504E-497B-A851-92C8EE649B8E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
