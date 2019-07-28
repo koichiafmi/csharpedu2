@@ -8,6 +8,19 @@ namespace Doukaku.Org
         public List<Word> WordList { get; set; }
         public WordChainSolver(List<Word> wordList)
         {
+            int i = 0;
+            while (i != wordList.Count)
+            {
+                if (wordList.Count(n => n.First == wordList[i].Last) == 0 &&
+                    wordList.Count(n => n.Last  == wordList[i].First) == 0)
+                {
+                    wordList.RemoveAt(i);
+                }
+                else
+                {
+                    ++i;
+                }
+            }
             WordList = wordList.ToList();
         }
 
