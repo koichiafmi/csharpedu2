@@ -5,26 +5,53 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TodohukenShiritori
+namespace Shiritori
 {
     class Program
     {
 
         static void Main(string[] args)
         {
-            string const start = "ふくい";
+            //const string start = "ふくい";
 
             using (var sr = new StreamReader("todohuken.txt"))
             {
                 var hoge = sr.ReadToEnd().Split('\n').ToList();
                 var todohukenList = hoge.ConvertAll(p => new Todohuken(p));
                 todohukenList = todohukenList
-                                    .Where(p => todohukenList.Any(q => q.end == p.first))
-                                    .Where(p => todohukenList.Any(q => q.first == p.end))
+                                    .Where(p => todohukenList.Any(q => (q.end == p.first) || (q.first == p.end)))
                                     .ToList();
 
-                var table =
+                var result = new List<Todohuken>();
+                todohukenList.ForEach(a =>
+                {
+                    var r = new List<Todohuken>(todohukenList);
+                    r.Remove(a);
+                    var tmpResult = Shiritori(r, a);
+                    if (tmpResult.Count > result.Count)
+                        result = tmpResult;
+                });
+
             }
+        }
+
+        private static List<Todohuken> Shiritori(List<Todohuken> src, Todohuken target)
+        {
+            var result = new List<Todohuken>();
+
+            src.Where(a => a.first == target.end).ToList().ForEach(a =>
+            {
+                var r = new List<Todohuken>(src);
+                r.Remove(a);
+                var tmpResult = Shiritori(r, a);
+                if (tmpResult.Count > result.Count)
+                {
+                    result = tmpResult;
+                }
+
+            });
+
+            return result;
         }
     }
 
