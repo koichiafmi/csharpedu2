@@ -12,7 +12,7 @@ namespace Shiritori
 
         static void Main(string[] args)
         {
-            //const string start = "ふくい";
+            const string start = "ふくい";
 
             using (var sr = new StreamReader("todohuken.txt"))
             {
@@ -23,35 +23,41 @@ namespace Shiritori
                                     .ToList();
 
                 var result = new List<Todohuken>();
-                todohukenList.ForEach(a =>
-                {
-                    var r = new List<Todohuken>(todohukenList);
-                    r.Remove(a);
-                    var tmpResult = Shiritori(r, a);
-                    if (tmpResult.Count > result.Count)
-                        result = tmpResult;
-                });
+                var tgt = new Todohuken(start);
+                todohukenList.Remove(tgt);
+                var tmp = Shiritori(todohukenList, tgt, new List<Todohuken>() { tgt });
+                //todohukenList.ForEach(a =>
+                //{
+                //    var r = new List<Todohuken>(todohukenList);
+                //    r.Remove(a);
+                //    var tmpResult = Shiritori(r, a, new List<Todohuken>());
+                //    if (tmpResult.Count > result.Count)
+                //        result = tmpResult;
+                //});
 
             }
         }
 
-        private static List<Todohuken> Shiritori(List<Todohuken> src, Todohuken target)
-        {
-            var result = new List<Todohuken>();
+        private List<Todohuken> results = new List<Todohuken>();
 
+        private static List<Todohuken> Shiritori(List<Todohuken> src, Todohuken target, List<Todohuken> newResults)
+        {
             src.Where(a => a.first == target.end).ToList().ForEach(a =>
             {
                 var r = new List<Todohuken>(src);
                 r.Remove(a);
-                var tmpResult = Shiritori(r, a);
-                if (tmpResult.Count > result.Count)
-                {
-                    result = tmpResult;
-                }
 
+                var tmp = new List<Todohuken>(newResults);
+                tmp.Add(a);
+                var tmpResult = Shiritori(r, a, tmp);
+
+                if (tmpResult.Count > newResults.Count)
+                {
+                    newResults = tmpResult;
+                }
             });
 
-            return result;
+            return newResults;
         }
     }
 
