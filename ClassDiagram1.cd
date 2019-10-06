@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="TodohukenShiritori.Program">
+    <Position X="0.5" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAABACAAAAAAAAAAAAAAAAAAAAAEAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="ans" />
+      <Field Name="startWord" />
+      <Field Name="wc" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Doukaku.Org.Word">
+    <Position X="8.5" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAAKAAAAAAAABAAAACCAAAAAA=</HashCode>
+      <FileName>Word.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doukaku.Org.WordChainList">
+    <Position X="3.75" Y="3" Width="2.75" />
+    <AssociationLine Name="AllWords" Type="Doukaku.Org.Word" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="6.5" Y="3.607" />
+        <Point X="9" Y="3.607" />
+        <Point X="9" Y="3.276" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="LastWord" Type="Doukaku.Org.Word" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="6.5" Y="3.928" />
+        <Point X="10.188" Y="3.928" />
+        <Point X="10.188" Y="3.276" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAYAAAAAIAAAAAAEAAAAQAAAAAAIAAAACAAAAAEAABA=</HashCode>
+      <FileName>WordChainList.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="LastWord" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="AllWords" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Doukaku.Org.WordChainSolver">
+    <Position X="3.5" Y="1" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAEAAAAAAIAAADAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>WordChainSolver.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="_queue" />
+      <Property Name="WordList" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Doukaku.Org.WordsFile">
+    <Position X="8.5" Y="4.25" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>WordsFile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Yu Gothic UI" Size="9" />
+</ClassDiagram>
